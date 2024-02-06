@@ -1,0 +1,45 @@
+class Person {
+    protected String name;
+    protected int age;
+
+    // Constructor for Person class
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display name and age of Person
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+class Employee extends Person {
+    private int employeeID;
+    private double salary;
+
+    // Constructor for Employee class
+    public Employee(String name, int age, int employeeID, double salary) {
+        super(name, age); // Call to the base class
+        this.employeeID = employeeID;
+        this.salary = salary;
+    }
+
+    // Method to display employee information
+    public void displayEmployeeInfo() {
+        System.out.println("Employee ID: " + employeeID);
+        System.out.println("Salary: Rs." + salary);
+        displayInfo(); // Call to displayInfo method of the base class
+    }
+}
+
+public class ques4 {
+    public static void main(String[] args) {
+        // Creating an Employee object
+        Employee employee1 = new Employee("Ramesh", 23, 834716, 80000);
+
+        // Displaying employee information
+        employee1.displayEmployeeInfo();
+    }
+}
