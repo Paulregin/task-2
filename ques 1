@@ -1,0 +1,48 @@
+public class ques1 {
+    private String name;
+    private int age;
+
+    // Constructor with default age
+    public ques1(String name) {
+        this.name = name;
+        this.age = 18; // Default age
+    }
+
+    // Constructor with specified age
+    public ques1(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display name and age
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    // Getter for name
+    public String getName() {
+        return name;
+    }
+
+    // Getter for age
+    public int getAge() {
+        return age;
+    }
+
+    // Setter for age
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public static void main(String[] args) {
+        // Creating objects of Person class
+        ques1 person1 = new ques1("leo");
+        ques1 person2 = new ques1("john", 24);
+
+        // Displaying information of persons
+        person1.displayInfo();
+        System.out.println();
+        person2.displayInfo();
+    }
+}
