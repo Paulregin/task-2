@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+class Account {
+    private double balance;
+
+    // No-argument constructor
+    public Account() {
+        this.balance = 0;
+    }
+
+    // Two-argument constructor
+    public Account(double initialBalance) {
+        this.balance = initialBalance;
+    }
+
+    // Method to deposit amount to the account
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposit successful. New balance: " + balance);
+        } else {
+            System.out.println("Invalid amount for deposit.");
+        }
+    }
+
+    // Method to withdraw amount from the account
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawal successful. New balance: " + balance);
+        } else {
+            System.out.println("Invalid amount for withdrawal or insufficient balance.");
+        }
+    }
+
+    // Method to display the balance
+    public void displayBalance() {
+        System.out.println("Current Balance: " + balance);
+    }
+}
+
+public class ques3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Creating account object using no-argument constructor
+        Account account1 = new Account();
+        account1.displayBalance();
+
+        // Creating account object using two-argument constructor
+        System.out.print("Enter initial balance for account 2: ");
+        double initialBalance = scanner.nextDouble();
+        Account account2 = new Account(initialBalance);
+        account2.displayBalance();
+
+        // Depositing and withdrawing from account 1
+        account1.deposit(300);
+        account1.withdraw(100);
+
+        // Depositing and withdrawing from account 2
+        account2.deposit(600);
+        account2.withdraw(250);
+
+        scanner.close();
+    }
+}
+
